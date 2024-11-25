@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<link rel="stylesheet" href="mystyle.css" lang="en">
+ 
+<meta charset="utf-8">
+
+
+   
+   <title>HARUNIS</title> 
+
+  
+<body>
+    <header>  </header>
+
+    
+    <h1 style="text-align: center;">HARUNIS ARTWORKS</h1>
+   
+    
+<div class="navigation" id="myNavigation">
+        <a href="index.html">HOME</a>
+        <a href="ILLUSTRATIONAL.html">ILLUSTRATIONAL</a>
+        <a href="">CONCEPTUAL</a>
+        <a href="SEQUENTIAL.html">SEQUENTIAL</a>
+        <a href="GAME_ART.html">GAME ART</a>
+        <a href="ABOUT_ME.html">ABOUT ME</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <div style="margin-top: -15px;">
+                <div class="div_icon"></div>
+                <div class="div_icon"></div>
+                <div class="div_icon"></div>
+            </div>
+        </a>
+</div>
+<div class="concept_img gallery">
+    <div class="row " id="gallery1">
+
+    <!-- 1nd column -->
+        <div  class="column">
+            <img src="img1.png" alt="Image 1" class="gallery-image">
+        </div>
+
+         <div class="column">
+            <img src="img2.png"  alt="Image 2" class="gallery-image">
+        </div>
+    </div>
+
+
+<!--second row-->
+<div class=" concept_img gallery" id="gallery2" >
+    <div class="row_co" style="margin-top: 20px;">
+       
+     <div class="column_co">
+        <img src="img/img3.jpg" alt="Image 3" class="gallery-image" >
+        </div>
+
+        <div class="column_co"> 
+        <img src="img/townhuntedsengoku-v2-3_orig.png" alt="" class="gallery-image"  ></div>
+
+        <div class="column_co">   
+        <img src="img/96867987_orig.jpg" alt="" class="gallery-image" ></div>
+        
+        <div class="column_co">  
+      <img src="img/3989637_orig.jpg"  alt="" class="gallery-image">  </div>
+    </div>
+</div>
+<!--end of second row-->
+
+<!-- third row-->
+<div class="concept_img gallery" id="gallery3" >
+        <div  class="size_cut">
+            <img src="img/concept7896897_orig.jpg"  alt="" class="gallery-image">
+        </div>
+
+         <div class="size_cut">
+            <img src="img/87854745784_orig.jpg" class="gallery-image" alt="">
+        </div>
+    </div>
+
+ <!-- end of third row-->
+
+
+<div class="concept_img gallery" id="gallery4" >
+    <div  style="margin-top: -30px;">
+       
+     <div class="column_co">
+        <img src="img/uzzibbbuii_1_orig.jpg" alt="" class="gallery-image" >
+        </div>
+
+        <div class="column_co"> 
+        <img src="img/876946465465_1_orig.jpg" alt="" class="gallery-image" ></div>
+
+        <div class="column_co">   
+        <img src="img/8764565465_1_orig.jpg" alt="" class="gallery-image" ></div>
+        
+</div>
+</div>
+        <!--controls -->
+            
+
+        <!--image controls thumbnail -->
+     </div>
+
+
+ 
+
+<!--End  of lightbox -->
+  
+
+    
+
+    
+    
+    
+<script>
+   function myFunction() {
+        var x = document.getElementById("myNavigation");
+        if (x.className === "navigation"){
+            x.className += " responsive";
+        } else {
+            x.className = "navigation";
+     
+        }
+    } 
+
+
+//close,open modal
+ 
+// Get all the gallery elements
+var galleries = document.querySelectorAll('.gallery');
+
+
+// Add a click event listener to each gallery element
+galleries.forEach(function(gallery) {
+  gallery.addEventListener('click', function(event) {
+    // Check if the clicked element is an image
+    if (event.target.classList.contains('gallery-image')) {
+      // Create the lightbox element if it doesn't exist
+      var lightbox = document.querySelector('.lightbox');
+      if (!lightbox) {
+        lightbox = document.createElement('div');
+        lightbox.classList.add('lightbox');
+        document.body.appendChild(lightbox);
+
+
+        
+
+        // Add an event listener to the lightbox to remove it when clicked
+        lightbox.addEventListener('click', function(event) {
+          if (event.target === lightbox) {
+            document.body.removeChild(lightbox);
+          }
+        });
+      }
+
+      // Update the lightbox content with the clicked image
+      var lightboxImage = lightbox.querySelector('.lightbox-image');
+      if (!lightboxImage) {
+        lightboxImage = document.createElement('img');
+        lightboxImage.classList.add('lightbox-image');
+        lightbox.appendChild(lightboxImage);
+      }
+      lightboxImage.setAttribute('src', event.target.getAttribute('src'));
+    }
+  });
+});
+
+
+
+
+    
+</script> 
+    <footer>
+        
+    <p>footer</p>
+    </footer>
+    </body>
+</html>

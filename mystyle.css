@@ -1,0 +1,624 @@
+html {
+    display: block;
+    height: 100%;
+    color: lightgray;
+}
+
+
+body {
+    background-color: #171718;
+    font-family:calibri;
+    display: block;
+    margin: 0;
+
+   
+
+
+    
+}
+
+
+
+header {
+ 
+    width: 100%;
+}
+
+.navigation {
+overflow: hidden;
+letter-spacing: 2px;
+text-align: center;
+margin-top: 50px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.navigation a {
+    font-size: 15px;
+    padding:10px 15px;  
+    color: lightgray;
+    text-decoration: none;
+    transition-duration: 0.8s;  
+    text-align: center;   
+}
+
+.navigation a:hover {
+    color:  darkgrey;
+    transition-duration: 0.8s;
+}
+
+.navigation a.active {
+
+  color: lightgray;
+  display: block;
+  
+}
+
+
+.navigation .icon {
+    display: none;
+}
+
+.div_icon {
+width: 35px;
+height: 3px;
+background-color: white;
+margin: 6px 0;
+
+}
+
+
+@media screen and (max-width: 900px) {
+    .navigation a:not(:first-child) {display: none;}
+    .navigation a.icon {
+        float: right;
+        display: block;
+
+    }
+    
+     }
+
+    @media screen and (max-width: 900px) {
+        .navigation.responsive {position: relative;}
+        .navigation.responsive .icon {
+            position:absolute;
+            right: 0;
+            top: 0;
+
+
+        }
+        .navigation.responsive a {
+            float: none;
+            display: block;
+            text-align: center;
+
+            
+
+
+       
+    }
+
+}
+
+
+/* dropdown menu */
+/*
+.dropdown-content {
+    display: none;
+    font-size: 15px;
+    padding: 15px;  
+    color: green;
+    text-decoration: none;
+     padding: 23px;
+     width: 160px;
+    transition-duration: 0.8s;  
+    text-align: center;
+    display: block;
+}
+
+.dropdown .dropbtn {
+    float: left;
+    overflow: hidden;
+}
+
+*/
+
+* {
+    box-sizing: border-box;
+
+}
+
+.row > .column {
+    padding:0 8px;
+}
+
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0 4px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.column {
+   max-width: 30%;
+   -ms-flex: 30%;
+   flex: 30%;
+   padding: 0 4px;
+   text-align: center;
+
+}
+
+.column-inside {
+    float: left;
+    width: 25%;
+}
+
+.column img {
+    margin-top: 8px;
+    text-align: center;
+    width: 100%;
+}
+
+
+@media screen and (max-width: 900px) {
+    .column {
+        -ms-flex: 100%;
+        flex: 100% ;
+        max-width: 100%;
+    }
+    .row {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+
+    }
+   .modal {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+   }
+    
+}
+
+/* modal background*/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+    text-align: center;
+}
+
+.modal-content {
+
+    position: relative;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 100%px;
+}
+
+.close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color:  #999;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.mySlides {
+    display: none;
+}
+/* autoplay gallery */
+
+
+.active {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 2s;
+}
+
+.slideshow_container {
+    max-width:600px ;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    height: auto;
+    margin-top: 20px;
+
+}
+
+
+@keyframes fade {
+    from 
+        {opacity: .4}
+    to 
+        {opacity: 1}
+
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0px 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.9s ease;
+}
+
+/*end of autoplay gallery*/
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: darkgrey;
+}
+
+.caption-container {
+    text-align: center;
+    background-color: black;
+    padding: 2px 16px;
+    color: white;
+}
+
+
+.demo {
+    
+}
+
+.active,
+.demo:hover {
+    opacity: 1;
+}
+
+img.hover-shadow {
+    transition: 0.3s;
+}
+
+.hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.illustrational {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 50px;
+
+}
+
+
+/* about me start */
+
+.container-row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0 4px;
+    justify-content: center;
+    margin-top: 40px;
+
+}
+
+.container-column {
+   max-width: 30%;
+   -ms-flex: 30%;
+   flex: 30%;
+   padding: 0 4px;
+   text-align: left;
+   font-size: 18px;
+   text-align: justify;
+
+}
+
+@media screen and (max-width: 900px){
+    .container-row
+    .container-column {
+        flex: 100%;
+        -ms-flex: 100%;
+        max-width: 100%;
+    }
+}
+
+/* about me end*/
+
+
+/*conceptual*/
+.column_co {
+   padding: 5px;
+    width: 20%;
+height: 200px;
+  display: table-cell;
+  border-spacing: 10px;
+
+}
+
+.column_co img {
+    width: 100%;
+    height: 100%;
+     object-fit: cover;
+  
+}
+
+/*container for align*/
+.second_row {
+    max-width: 55%;
+    margin: auto;
+    box-sizing: border-box;
+    display: grid;
+  
+  grid-gap: 10px;
+}
+
+
+
+.size_cut {
+    width: 30%;
+height: 600px;
+display: table-cell;
+padding: 5px;
+}
+
+.size_cut img {
+    object-fit: cover;
+    width: 100%;
+height: 90%;
+margin: auto;
+}
+
+
+.third_row {
+    margin: auto;
+    max-width: 1130px;
+    margin-top: 20px;
+    box-sizing: border-box;
+    
+}
+
+
+.column_co_forth {
+  
+    width: 20%;
+height: 300px;
+  display: table-cell;
+  border-spacing: 10px;
+
+}
+    
+
+.column_co_forth img {
+    width: 100%;
+    height: 100%;
+     object-fit: cover;
+     cursor: pointer;
+  
+}
+
+footer {
+    border-top: 2px solid white;
+    margin-top: 50px;
+}
+
+
+/*my slide2 2 row*/
+
+.mySlidesTwo {
+    display: none;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-items: center;
+
+}
+
+.gallery-image {
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    cursor: pointer;
+
+}
+
+.lightbox{
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0,0,0,0.7);
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+
+.lightbox-close {
+    position: absolute;
+    max-width: 20px;
+    max-height: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+
+}
+
+.lightbox-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+
+
+/* game art section css */
+
+.game_img {
+    text-align: center;
+    max-width: 960px;
+    margin-top: 20px;
+    margin: auto;
+    display: block;
+
+}
+
+.concept_img {
+    text-align: center;
+    max-width: 960px;
+    margin-top: 20px;
+    margin: auto;
+    display: block;
+
+}
+
+@media screen and (max-width: 800px) {
+  .game_img {
+    
+    
+  }
+}
+
+
+.game_img img {
+    padding:0px 6px;
+    width: 100%;
+
+}
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding:0 0 0 0;
+}
+.row_2 {
+    content: "";
+    clear: both;
+    display: inline-table;
+}
+
+
+.column {
+      float: left;
+      width: 25%;
+      padding-top: 15px;
+      padding-left: 0;
+      padding-right: 0;
+font-size: 0px;
+    }
+
+
+.text{
+    max-width: 800px;
+    margin: 0 auto}
+
+
+h1, h2 {
+    text-align: center;
+}
+
+.column_co_game img {
+    width: 100%;
+    height: 100%;
+
+
+}
+
+iframe {
+    padding: 10px;
+}
+
+@media screen and (max-width: 900px){
+    .row
+    .column_co_game{
+        flex: 100%;
+        -ms-flex: 100%;
+        max-width: 100%;
+    }
+}
+
+.button {
+background-color: #303030;
+height: 50px;
+color: white;
+border: none;
+text-align: center;
+}
+
+.button:hover{
+    background-color:   #A0A0A0;
+    cursor: pointer;
+    transition: 1s;
+    color: black;
+}
+
+.ui_row {
+    margin: auto;
+    max-width: 1135px;
+    margin-top: 20px;
+}
+
+
+.grid_row {
+     display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates 3 columns of equal width */
+    justify-items: center;
+}

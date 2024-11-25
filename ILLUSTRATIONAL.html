@@ -1,0 +1,169 @@
+<!DOCTYPE html >
+
+
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mystyle.css">
+    
+    
+   <meta charset="utf-8">
+   <title>HARUNIS</title> 
+</head>
+  
+<body >
+    <header></header> 
+
+    
+    <h1 style="text-align: center;">HARUNIS ARTWORKS</h1>
+
+    <!-- menu -->
+
+   
+    <div  class="navigation" id="myNavigation">
+        <a href="index.html" >HOME</a>
+        <a href="">ILLUSTRATIONAL</a>
+        <a href="CONCEPTUAL.html">CONCEPTUAL</a>
+        <a href="SEQUENTIAL.html">SEQUENTIAL</a>
+        <a href="GAME_ART.html">GAME ART</a>
+        <a href="ABOUT_ME.html">ABOUT ME</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <div style="margin-top: -15px;">
+                <div class="div_icon"></div>
+                <div class="div_icon"></div>
+                <div class="div_icon"></div>
+            </div>
+   </a>
+
+
+
+       
+
+ 
+    </div>
+<div class="row">
+
+    <!-- 1nd column -->
+        <div  class="column" style="text-align: center;">
+            <img src="img/concept.png" onclick="openModal();currentSlide(1)" class="hover-shadow cursor" alt="">
+            <img src="img/pic1.png" onclick="openModal();currentSlide(2)" class="hover-shadow cursor" alt="">
+        </div>
+
+
+<!-- 2nd column -->
+         <div class="column">
+            <img src="img/illustrational2.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow" alt="">
+            <img src="img/illustrational 1.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow" alt="">
+        </div>
+
+<!--Lightbox -->
+ <div id="myModal" class="modal">
+     <span class="close cursor" onclick="closeModal()">&times;</span>
+     <div class="modal-content">
+         
+        <div class="mySlides">
+            <img src="img/concept.png" style="width: 100%" alt="">
+        </div>
+
+         <div class="mySlides">
+            <img src="img/pic1.png" style="width: 100%" alt="">
+        </div>
+
+      <div class="mySlides">
+            <img src="img/illustrational2.jpg" style="width: 100%" alt="">
+        </div>
+
+        <div class="mySlides">
+            <img src="img/illustrational 1.jpg" style="width: 100%" alt="">
+        </div>
+
+          
+
+        <!--controls -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+
+
+        <!--image controls thumbnail -->
+
+   
+     </div>
+ </div>
+
+<!--End  of lightbox -->
+    </div>
+    
+
+    
+    
+    
+   <script>  
+function myFunction() {
+        var x = document.getElementById("myNavigation");
+        if (x.className === "navigation"){
+            x.className += " responsive";
+        } else {
+            x.className = "navigation";
+     
+        }
+    } 
+
+
+    //dropwdown menu 
+    
+
+    //close drop after clicking out
+    
+
+
+
+
+
+//close,open modal
+    function openModal(){
+        document.getElementById("myModal").style.display = "block";
+    }
+
+    function closeModal(){
+        document.getElementById("myModal").style.display = "none";
+    }
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n){
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n){
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++){
+            dots[i].className = dots[i].className.replace("active","");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+        }
+
+    
+
+
+    </script> 
+    
+    </body>
+</html>
